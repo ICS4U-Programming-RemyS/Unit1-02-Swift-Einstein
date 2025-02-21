@@ -42,7 +42,7 @@ func einstein() {
         }
 
         // Check if mass is valid
-        if (massAsDoubleLoop >= 0) {
+        if massAsDoubleLoop >= 0 {
             // Store valid mass
             massAsDouble = massAsDoubleLoop
             // Exit loop
@@ -53,10 +53,11 @@ func einstein() {
     } while true
 
     // Calculate the energy in joules and force unwrap because it is an optional variable that does not contain nil
-    let energyInJoules: Double = massAsDouble! * pow(SPEED_OF_LIGHT, 2);
+    let energyInJoules: Double = massAsDouble! * pow(SPEED_OF_LIGHT, 2)
 
     // Display the energy in joules
-    print("The energy released from ", String(format: "%.3f", massAsDouble!), "kg of mass is:", String(format: "%.3e", energyInJoules), "J")
+    print("The energy released from ", String(format: "%.3f", massAsDouble!)
+        , "kg of mass is:", String(format: "%.3e", energyInJoules), "J")
 
 }
 
