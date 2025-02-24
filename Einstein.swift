@@ -10,7 +10,7 @@
 // Import Foundation library
 import Foundation
 
-// Constants
+// Constants used double to simply calculations and it is sufficient for the values
 let SPEED_OF_LIGHT: Double = 299792458
 
 func einstein() {
@@ -25,7 +25,7 @@ func einstein() {
         // Message to ask user for mass
         print("Please enter the mass you will be using in kg: ")
 
-        // Read user mass with guard
+        // Read user mass as a string and use guard to make sure input is valid
         guard let massAsString = readLine() else {
             // Error message
             print("Invalid input. Please enter a valid log length.")
@@ -33,7 +33,7 @@ func einstein() {
             continue
         }
 
-        // Safely convert user mass as a string to double
+        // Safely convert user mass as a string to double and use guard to make sure input is valid
         guard let massAsDoubleLoop = Double(massAsString) else {
             // Error message
             print("Invalid input: \(massAsString). Log length must be 0.25, 0.5, or 1.0.")
@@ -57,7 +57,7 @@ func einstein() {
 
     // Display the energy in joules
     print("The energy released from ", String(format: "%.3f", massAsDouble!)
-        , "kg of mass is:", String(format: "%.3e", energyInJoules), "J")
+        , "kg of mass is:", String(format: "%.3eJ", energyInJoules))
 
 }
 
